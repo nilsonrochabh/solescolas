@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Software Livre / Escolas</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <link rel="icon" href="img/icone.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="img/icone.ico" type="image/x-icon" />
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+ <link href="public/stylesheets/bootstrap.min.css" rel="stylesheet">
+ <link href="public/stylesheets/style.css" rel="stylesheet">
+</head>
+<body>
+
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+   <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+     <span class="sr-only">Toggle navigation</span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">Software Livre - Escolas</a>
+   </div>
+   <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+     <li><a href="/">In&iacute;cio</a></li>
+      <li><a href="#">Ajuda</a></li>
+    </ul>
+   </div>
+  </div>
+ </nav>
+ 
+ <div id="main" class="container-fluid">
+  
+  <h3 class="page-header"><%=title %></h3>
+  
+  <form action="<%= action%>" method="POST"">
+  	
+    <div class="row">
+  	  <div class="form-group col-md-3">
+  	  	<label for="SRE">SRE</label>
+  	  	<input type="text" class="form-control" id="sre" 
+        name="SRE" placeholder="Digite o valor" value="<%=doc.SRE %>" >
+	   </div>
+
+	  <div class="form-group col-md-1">
+  	  	<label for="Cod_Cidade">Cod_Cidade</label>
+  	  	<input type="text" class="form-control" name="COD_MUNICIPIO" 
+        placeholder="Digite o valor" value="<%=doc.COD_MUNICIPIO %>">
+  	  </div>
+	  <div class="form-group col-md-3">
+  	  	<label for="Cidade">Cidade</label>
+  	  	<input type="text" class="form-control" name="MUNICIPIO" 
+        id="cidade" placeholder="Digite o valor" value="<%=doc.MUNICIPIO %>">
+  	  </div>
+	</div>
+	<div class="row">
+  	  <div class="form-group col-md-4">
+  	  	<label for="ESCOLA">Escola</label>
+  	  	<input type="text" class="form-control"  name="ESCOLA"  
+        placeholder="Digite o valor" value="<%=doc.ESCOLA %>">
+  	  </div>
+	  <div class="form-group col-md-3">
+  	  	<label for="Localização">Localização</label>
+  	  	<input type="text" class="form-control" name="LOCALIZACAO" 
+         placeholder="Digite o valor" value="<%=doc.LOCALIZACAO %>">
+  	  </div>
+  
+  </div>
+<div class="row">
+      <div class="form-group col-md-2">
+        <label for="CEP">CEP:</label>
+        <input type="text" class="form-control" name="CEP" 
+        placeholder="Digite o valor" value="<%=doc.CEP %>">
+
+      </div>
+	  <div class="form-group col-md-3">
+      	  	<label for="ENDERECO">Endereço</label>
+  	  	<input type="text" class="form-control" name="ENDCIDADECO" 
+         placeholder="Digite o valor" value="<%=doc.ENDERECO%>">
+  	  </div>
+	  <div class="form-group col-md-1">
+  	  	<label for="N">Nº</label>
+  	  	<input type="text" class="form-control" name="NUMERO" 
+         placeholder="Digite o valor" value="<%=doc.NUMERO %>">
+  	  </div>
+      <div class="form-group col-md-3">
+        <label for="BAIRRO">Bairro</label>
+        <input type="text" class="form-control" name="BAIRRO" 
+         placeholder="Digite o valor" value="<%=doc.BAIRRO %>" >
+      </div>
+	</div>  
+    
+	<div class="row">
+  	  <div class="form-group col-md-1">
+  	  	<label for="DDD">DDD</label>
+  	  	<input type="text" class="form-control" name="DDD" 
+        placeholder="Digite o valor" value="<%=doc.DDD %>">
+  	  </div>
+	  <div class="form-group col-md-3">
+  	  	<label for="TELEFONE">Telefone</label>
+  	  	<input type="TEXT" class="form-control" name="TELEFONE" 
+        placeholder="Digite o valor" value="<%=doc.TELEFONE %>">
+  	  </div>
+        <div class="form-group col-md-3">
+        <label for="Email1">Email</label>
+        <input type="email" class="form-control" name="EMAIL" 
+         placeholder="Digite o valor" value="<%=doc.EMAIL %>">
+      </div>
+
+    <div class="form-group col-md-3">
+        <label for="SITE">Site</label>
+        <input type="text" class="form-control" name="SITE"  
+        placeholder="Digite o valor" value="<%=doc.SITE %>">
+      </div>  
+	
+  </div>
+
+    
+	<div class="row">
+  	  <div class="form-group col-md-3">
+  	  	<label for="SO">Sistema Operacional</label>
+  	  	<input type="text" class="form-control" name="SISTEMA" 
+         placeholder="Digite o Valor" value="<%=doc.Sistema %>">
+  	  </div>
+	  <div class="form-group col-md-3">
+  	  	<label for="LAB">Laboratorio de Informática</label>
+  	  	<input type="text" class="form-control"  name="LABORATORIO" 
+        placeholder="Digite o valor" value="<%=doc.LABORATORIO %>">
+  	  </div>
+   
+	  
+    <label for="Rede"> Rede:</label>
+    <div  class="check value="box">
+
+    <input type="checkbox" value="wifi" > Wifi
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" value="
+        cabo">Cabo</label >
+    </div>
+   
+    <div class="form-group col-md-2">
+     	<label for="COMPUTADORE">Quantidade de Computadores</label>
+    	<input type="text" class="form-control" name="COMPUTADORES"
+       placeholder="Digite o valor" value="<%=doc.COMPUTADORES %>">
+  	</div>
+  
+     <div class="form-group col-md-2">
+        <label for="status">Status</label>
+        <input type="text" class="form-control" name="STATUS" 
+        placeholder="Digite o valor" value="<%=doc.STATUS %>">
+      </div>
+  
+
+  </div>
+	
+
+      <div class="form-group col-md-3">
+        <label for="TAGS">Tags</label>
+        <input  name="TAGS" value="<%=doc.TAGS %>" />
+      </div>
+  
+          
+  <hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="submit" class="btn btn-primary">Salvar</button>
+		
+	  </div>
+	</div>
+
+  </form>
+ </div>
+ 
+
+ <script src="public/javascripts/jquery.min.js"></script>
+ <script src="public/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <link rel="icon" href="img/icone.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="img/icone.ico" type="image/x-icon" />
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Linux - Escolas</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+ <div id="navbar" class="navbar-collapse collapse">
+          <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">In&iacute;cio</a></li>
+                
+              </ul>
+
+        
+       <form action="/search" method="get" class="navbar-form navbar-right">
+        <input type="text" name="query"  size="80" placeholder="Digite o nome da cidade" id="busca">  
+          <button type="submit" ><span class="glyphicon glyphicon-search"></span></button> 
+        </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+ 
+        
+      </div>
+    </div>
+
+    <div class="container">
+
+    <div class="bs-example" data-example-id="table-within-panel"> 
+      <div class="panel panel-default"> 
+        <div class="panel-heading" action="<%= action%>"> 
+        <h1 ><%=doc.MUNICIPIO %></h1>
+        <h3><%=doc.SRE %></h3>
+        <p>Atualmente a cidade conta com <%=doc.QUANT_ESCOLAS%> escolas públicas de ensino básico</p>
+        <p><a class="btn btn-primary btn-lg
+        " href=<%=doc.SITE%> role="button">leia mais  &raquo;</a></p>
+        </div>
+        <div class="panel-heading">
+        <h4><%=doc.ESCOLA %></h4>
+        </div> 
+          <div class="panel-body"> 
+            <p>Informações Gerais:  
+
+            Aqui pode ser colocado informações sobre alunos e professores da escola além de informações referente ao dia a dia da instituição.
+            </p> 
+            </div>
+            <table class="table table-bordered">
+            <thead class="thead-default">
+              <tr>
+                <th>Técnico NTE Responsável</th>
+                <th>Contato Escola</th>
+                <th>DDD</th>
+                <th>Telefone</th>
+                <th>E-mail</th>
+                <th>Data da Coleta dos Dados</th>
+              </tr>
+            </thead>  
+            <tbody>
+                <tr>
+                              
+
+                  <td>  <%= doc.TEC_NTE_RESPONSAVEL %></td> 
+                  <td>  <%= doc.CONTATO_ESCOLA %></td> 
+                  <td>  <%= doc.DDD %></td> 
+                  <td>  <%= doc.TELEFONE %></td> 
+                  <td>  <%= doc.EMAIL %></td>
+                  <td>  <%= doc.DATA_COLETA_DADOS %></td>  
+
+                </tr> 
+             </tbody>
+            </table>
+            </div> 
+            <hr>
+            <table class="table table-bordered" >
+
+            <h3>Tabela sobre os computadores da Secretaria</h3>
+            <thead class="thead-default">
+              <tr>
+                
+                <th>Computadores em funcionamento</th>
+                <th>Computadores Inutilizaveis</th>
+                <th>Sistema Operacional</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><%= doc.QUANTI_DESKTOP_EM_CONDICOES_DE_USO %></td>
+                <td><%= doc.QUANTI_DE_DESKTOP_INSERVIVEL %></td>
+                <td>Windows</td>
+
+              </tr>
+
+              
+            </tbody>
+              
+            </table>
+            
+            
+            <hr>
+            <h3>Computadores para uso dos Alunos</h3>
+              <table class="table table-bordered" "> 
+
+                <thead class="thead-default"> 
+                  <tr> 
+                      <th>Laboratório</th> 
+                      <th>Computadores no Laborátorio</th> 
+                      <th>Computadores em condições de Uso</th>
+                      <th>Computadores sem Condições de Uso</th>
+                      <th>Linux Educacional</th> 
+                      </tr> 
+                   </thead> 
+                   <tbody> 
+                    <tr> 
+                      
+                        <td><%= doc.LABORATORIO%></td> 
+                        <td><%= doc.QUANTIDE_DESKTOP%></td> 
+                        <td> <%=doc.QUANT_DESKTOP_EM_CONDIÇÕES_DE_USO%></td> 
+                        <td> <%=doc.QUANTI_DE_DESKTOP_INSERVIVEL_LAB%></td> 
+                        <td><a href="/software">  <%= doc.LINUX_EDUCACIONAL%> </a></td> 
+
+                    </tr> 
+                      
+                      </tbody> 
+                  </table> 
+              </div> 
+          </div>
+    
+      
+      <hr>
+
+      <footer>
+       <p> </p>
+
+       
+
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="javasript/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="javasript/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

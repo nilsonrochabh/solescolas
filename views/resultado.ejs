@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="img/icone.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/icone.ico" type="image/x-icon" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Inclua todos os plugins compilados (abaixo), ou inclua um por um quando for necessário -->
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+
+  <%
+           if(results){
+            if(list.length > 0){
+        %>
+ 
+  <body>
+   
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only"></span>
+            <span class="icon-bar">????</span>
+            <span class="icon-bar">????</span>
+            <span class="icon-bar">????</span>
+          </button>
+          <a class="navbar-brand" href="/">Software Livres - Escolas</a>
+        </div>
+         <div id="navbar" class="navbar-collapse collapse">
+          <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">In&iacute;cio</a></li>
+               
+              </ul>
+  
+
+
+       <form action="/search" method="get" class="navbar-form navbar-right">
+        <input type="text" name="query"  size="80" placeholder="Digite o nome da cidade" id="busca">  
+          <button type="submit" ><span class="glyphicon glyphicon-search"></span></button> 
+        </form>
+
+        </div><!--/.navbar-collapse -->
+      </div>
+
+    </nav>
+<main role="main">
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+
+    <div class="jumbotron">
+      <div class="container">
+
+        <h1><%= search %></h1>
+
+      </div>
+    </div>
+
+  <div class="container">
+        
+        <div class="row">
+               
+ <% list.forEach(function(item){ %>
+          <div class="col-md-4">
+            <h2><%= item.ESCOLA%></h2>
+              <p><a class="btn btn-secondary" href="/view/<%=item._id%>" role="button">Clque aqui </a></p>
+            </div>
+            <% }); %>
+
+        
+            <hr>
+
+      <% } else{ %>
+              
+          <b>Ainda não temos dados consolidados para a cidade de: <%= search %> !</b> <br />
+          <a href="/"> Voltar </a>
+           
+      <% 
+           }
+        }
+      %>
+  </div> <!-- /container -->
+    </main>
+  </body>
+</html>
